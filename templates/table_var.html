@@ -1,0 +1,25 @@
+<!--
+This file tries to create a variable sized table
+
+
+-->
+
+<html>
+    <head>
+        <title>Resizable table </title>
+    </head>
+    <table>
+        {% for cr in customer_requirements %}
+        <tr>
+            <td>{{customer_requirements[loop.index0]}}</td>
+
+            {% if loop.index0 == 0 %}
+                {% for er in engineering_requirements %}
+
+                <th>{{engineering_requirements[loop.index0]}}</th> 
+
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </table>
+</html>
