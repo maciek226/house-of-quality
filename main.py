@@ -21,6 +21,9 @@ def table_page():
     return render_template("table_var.html", 
                            customer_requirements=cr,
                            engineering_requirements=er)
+    
+def shapes_page():
+    return render_template("shapes.html")
 
 if __name__ == '__main__':
     host = "127.0.0.1"
@@ -32,7 +35,7 @@ if __name__ == '__main__':
     app.add_url_rule('/hello', 'hello', hello_world)
     app.add_url_rule('/', 'start', start_page)
     app.add_url_rule('/table', 'table', table_page)
-    
+    app.add_url_rule('/shapes', 'shapes', shapes_page)
     
     app.add_url_rule('/<url>', 'input', input_page)
     
